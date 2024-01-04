@@ -776,12 +776,11 @@ ggarrange(CB_A_plot, CB_B_plot,
 
 **Calcification Accretion Units (CAUs)** and **Bioerosion Monitoring Units (BMUs)** were used to investigate the balance between	calcification	and erosion. CAUs	and	BMUs were collected and redeployed for the next sampling cycle. CAUs are processed	by the NCRMP Pacific Climate group	and	the data will be available within a year. BMUs will be dried and cleaned using	a	hydrogen peroxide	solution. These	samples	will be	weighed and scanned using a CT scanner and then compared to their pre-scans	to quantify	bioerosion. Data will be available in a year. Please reference previous datasets for more information. 
 
-```{r CAUs, echo=FALSE, out.width = '50%', fig.cap="Figure 5: CAU and BMU pair before retreval after being deployed for three years. CAUs are two parallel PVC plates to quantify settled accretors. BMU is mounted coral skeleton installed at the base of the metal stake and has been encrusted.", fig.align='center'}
+```{r CAUs, echo=FALSE, out.width = '50%', fig.cap="Figure 5: CAU and BMU pair after deployment. CAUs are two parallel PVC plates to quantify settled accretors. BMU is mounted coral skeleton installed at the base of the metal stake and has been encrusted.", fig.align='center'}
 
 knitr::include_graphics("Data/Pictures/newCAUBMU.JPG")
 
 ```
-
 
 -----
 
