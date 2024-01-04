@@ -1,0 +1,28 @@
+﻿Region,Transect,Location,Site,Depth_M ,Lat,Long,Depth
+STJ,North,STJ_north_5,Johnson's Reef,5,18.36242,-64.77214,5 m
+STJ,North,STJ_north_15,Johnson's Reef,15,18.36316,-64.77052,15 m
+STJ,North,STJ_north_25,Johnson's Reef,25,18.36325,-64.77042,25 m
+STJ,East,STJ_east_1,Newfound,1,18.34633,-64.66757,1 m
+STJ,East,STJ_east_5,Newfound,5,18.34684,-64.6655,5 m
+STJ,East,STJ_east_15,Newfound,15,18.34744,-64.66539,15 m
+STJ,East,STJ_east_25,Newfound,25,18.3499,-64.66755,25 m
+STJ,West,STJ_west_1,Steven Cay,1,18.32899,-64.80777,1 m
+STJ,West,STJ_west_5,Steven Cay,5,18.32827,-64.80797,5 m
+STJ,West,STJ_west_15,Steven Cay,15,18.32802,-64.80903,15 m
+STJ,West,STJ_west_25,Steven Cay,25,18.32744,-64.80994,25 m
+STJ,South,STJ_south_1,VIERS dock,1,18.31827,-64.72413,1 m
+STJ,South,STJ_south_5,Tektite,5,18.31044,-64.72157,5 m
+STJ,South,STJ_south_15,Tektite,15,18.30976,-64.72299,15 m
+STJ,South,STJ_south_25,Offshore of Tektite,25,18.30746,-64.73941,25 m
+STT,South,STT_south_1,UVI dock,1,18.34048,-64.97699,1 m
+STT,South,STT_south_5,Brewers,5,18.34435,-64.98433,5 m
+STT,South,STT_south_15,Brewers,15,18.34402,-64.98453,15 m
+STT,South,STT_south_25,South Waters,25,18.28034,-64.94608,25 m
+STT,North,STT_north_1,Inner Brass,1,18.38344,-64.97438,1 m
+STT,North,STT_north_5,Inner Brass,5,18.3833,-64.97528,5 m
+STT,North,STT_north_15,Inner Brass,15,18.38262,-64.97816,15 m
+STT,North,STT_north_25,Inner Brass,25,18.38279,-64.97871,25 m
+STT,West,STT_west_1,Savana,1,18.34057,-65.0818,1 m
+STT,West,STT_west_5,Savana,5,18.34056,-65.08183,5 m
+STT,West,STT_west_15,Savana,15,18.34082,-65.08269,15 m
+STT,West,STT_west_25,Savana,25,18.34071,-65.08305,25 m
