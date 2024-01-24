@@ -12,7 +12,7 @@ editor_options:
 
 <h1 style="color: darkblue;font size=24, align=center" > National Coral Reef Monitoring Program</h1> 
 
-<h2 style="color: darkblue;font size=12"> Climate Monitoring Brief: St. Thomas and St. John</h2>
+<h2 style="color: darkblue;font size=12"> Climate Monitoring Brief: STT and STJ</h2>
 --------
 
 
@@ -71,7 +71,7 @@ University of Miami Cooperative Institute of Marine and Atmospheric Studies (CIM
 <br>
 
 <h5 style="font size=6">
-N. Besemer, A. Palacio, T.Gill, K. Simmons,  M. Studivan, I. Enochs - January 2024
+N. Besemer, A. Palacio, A. Webb, G. Kolodziej, T.Gill, I. Enochs - January 2024
 </h5>
 
 ```{r logos, echo=FALSE, fig.align='left', out.width='20%'}
@@ -86,13 +86,13 @@ plot_grid(p1, p2)
 
 ### Mission
 
-The AOML Coral Program tracks the status and trends of coral reef ecosystems in the U.S. Atlantic and Caribbean as part of the National Coral Reef Monitoring Program (NCRMP). This summary brief provides an overview of the most recent climate monitoring efforts in Saint Thomas and Saint John (US Virgin Islands).
+The AOML Coral Program tracks the status and trends of coral reef ecosystems of the U.S. Atlantic and Caribbean as part of the National Coral Reef Monitoring Program (NCRMP). This summary brief provides an overview of the most recent climate monitoring efforts in Saint Thomas and Saint John (US Virgin Islands).
 
 
 ### Expedition summary
 
-* The NCRMP Atlantic climate monitoring team recently traveled to St. Thomas and St. John from July 19th to July 29th, 2023
-* XX different sites were visited by four team members and collaborators completing a total of XX dives. 
+* The NCRMP Atlantic climate monitoring team recently traveled to XX from XX to XX, 2023
+* XX different sites were visited by three team members and collaborators completing a total of XX dives. 
 
 --------
 
@@ -588,7 +588,7 @@ pH_Temp_Plot<-ggplot(data = pH) +
   annotate("rect",
           xmin = seq.POSIXt(as.POSIXct('2023-07-24 18:56:00', tz='America/Puerto_Rico'),
                          by = "day", length.out = 3),
-          xmax = seq.POSIXt(as.POSIXct('2023-07-25 05:53:00', tz='America/Puerto_Rico'),
+          xmax = seq.POSIXt(as.POSIXct('2023-07-25 05:55:00', tz='America/Puerto_Rico'),
                          by = "day", length.out = 3),
           ymin = -Inf, ymax = Inf,
           fill="grey", alpha=0.5) +
@@ -648,7 +648,7 @@ Light_Current<-ggplot(data = light) +
 annotate("rect",
           xmin = seq.POSIXt(as.POSIXct('2023-07-24 18:56:00', tz='America/Puerto_Rico'),
                          by = "day", length.out = 3),
-          xmax = seq.POSIXt(as.POSIXct('2023-07-25 05:53:00', tz='America/Puerto_Rico'),
+          xmax = seq.POSIXt(as.POSIXct('2023-07-25 05:55:00', tz='America/Puerto_Rico'),
                          by = "day", length.out = 3),
           ymin = -Inf, ymax = Inf,
           fill="grey", alpha=0.5) +
@@ -776,11 +776,6 @@ ggarrange(CB_A_plot, CB_B_plot,
 
 **Calcification Accretion Units (CAUs)** and **Bioerosion Monitoring Units (BMUs)** were used to investigate the balance between	calcification	and erosion. CAUs	and	BMUs were collected and redeployed for the next sampling cycle. CAUs are processed	by the NCRMP Pacific Climate group	and	the data will be available within a year. BMUs will be dried and cleaned using	a	hydrogen peroxide	solution. These	samples	will be	weighed and scanned using a CT scanner and then compared to their pre-scans	to quantify	bioerosion. Data will be available in a year. Please reference previous datasets for more information. 
 
-```{r CAUs, echo=FALSE, out.width = '50%', fig.cap="Figure 5: CAU and BMU pair after deployment. CAUs are two parallel PVC plates to quantify settled accretors. BMU is mounted coral skeleton installed at the base of the metal stake and has been encrusted.", fig.align='center'}
-
-knitr::include_graphics("Data/Pictures/newCAUBMU.JPG")
-
-```
 
 -----
 
@@ -844,10 +839,6 @@ funding
 
 ### Our Team
 
-
-```{r team, echo=FALSE, out.width = '50%', fig.align='center', fig.cap="Puerto Rico,  2023 Field team" }
-
-knitr::include_graphics("Data/Fieldteam.png")
-```
+**XXX Field Team**: XXX
 
 **AOMLs NCRMP Atlantic and Caribbean Climate Team**: I. Enochs, N. Besemer, A. Palacio-Castro, G. Kolodziej, T. Gill, A.Boyd, M. Jankulak, K. Simmons, A. Webb, B. Chomitz
