@@ -597,7 +597,7 @@ pH_Temp_Plot<-ggplot(data = pH) +
           label = paste("July", 24:27),
           x = seq.POSIXt(as.POSIXct('2023-07-24 11:00:00', tz='America/Puerto_Rico'),
                          by = "day", length.out = 4),
-          y = pH_max + 0.02)+ 
+          y = pH_max + 0.03)+ 
   # Data
   geom_line(aes(x=DateTime, y=Temp.adj, color = "Temperature"),
             size=0.8) +
@@ -605,7 +605,7 @@ pH_Temp_Plot<-ggplot(data = pH) +
             size=0.8) +
   scale_color_manual(values=c("black", "red"))+
   # Axes
-  scale_y_continuous(limits = c(7.36, 7.99),
+  scale_y_continuous(limits = c(7.36, 8),
                      name="pH (Total scale)",
                      sec.axis = sec_axis(~(.+0.2)/scaleFactor_T,
                                 name="Temperature (\u00B0C)"))  +
@@ -614,7 +614,7 @@ pH_Temp_Plot<-ggplot(data = pH) +
                   #date_minor_breaks = "1 hour",
                   labels = date_format("%m/%d\n%H:%M",
                                         tz="America/Puerto_Rico"))+
-  coord_cartesian(ylim = c(7.36, 7.99),
+  coord_cartesian(ylim = c(7.36, 8),
                   xlim = c(min(pH$DateTime),max(pH$DateTime)),
                   clip = 'off',
                   expand = T) +
@@ -721,7 +721,7 @@ ggdraw(plot_grid(plot_grid(pH_Temp_Plot,
 
 ```{r, Carbonate_B_plot, echo=FALSE, warning=FALSE, fig.width = 7.5, fig.height = 3.5}
 
-CB.data<- read.csv("Data/PR_BC.csv")
+CB.data<- read.csv("Data/UV_BC.csv")
 CB.data$Macroalgae.cover<-NULL
 CB.data$Turf.cover<-NULL
 CB.data$Coral.cover<-NULL
@@ -730,7 +730,7 @@ CB.data$CCA.cover<-NULL
 CB.data.A<-melt(CB.data,id.vars=c(8:9))
 CB.data.A$Year<-as.character(CB.data.A$Year)
 CB.data.A[c(3)] <- lapply(CB.data.A[c(3)], gsub, pattern = ".", replacement = " ", fixed = TRUE)
-CBA.data<-subset(CB.data.A,variable=="Carbonate budgets")
+CBA.data<-subset(CB.data.A,variable=="Carbonate budget")
 
 CB_A_plot<-ggplot(CBA.data, aes(Year, value, fill=Year))+
   geom_abline(slope = 0, intercept = 0, colour="gray")+
