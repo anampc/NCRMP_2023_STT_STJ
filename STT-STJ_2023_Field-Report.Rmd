@@ -71,7 +71,7 @@ University of Miami Cooperative Institute of Marine and Atmospheric Studies (CIM
 <br>
 
 <h5 style="font size=6">
-N. Besemer, A. Palacio, A. Webb, G. Kolodziej, T.Gill, I. Enochs - January 2024
+N. Besemer, A. Palacio, G. Kolodziej, T.Gill, K. Simmons I. Enochs - January February
 </h5>
 
 ```{r logos, echo=FALSE, fig.align='left', out.width='20%'}
@@ -91,8 +91,8 @@ The AOML Coral Program tracks the status and trends of coral reef ecosystems of 
 
 ### Expedition summary
 
-* The NCRMP Atlantic climate monitoring team recently traveled to XX from XX to XX, 2023
-* XX different sites were visited by three team members and collaborators completing a total of XX dives. 
+* The NCRMP Atlantic climate monitoring team recently traveled to St. Thomas and St. John from July 19th to July 29th, 2023
+* 27 different sites were visited by four team members and collaborators completing a total of 68 dives. 
 
 --------
 
@@ -153,8 +153,7 @@ STR_all <-
   summary(STR_all$Site)
 ```
 
-**Subsurface temperature**
-Subsurface temperature recorders (STRs) were recovered and redeployed at all nine transects, each one composed by four depths (Fig. 1). In total, more than 7.7 million temperature observations were collected from 24 instruments (Table 1)
+**Subsurface temperature**: Subsurface temperature recorders (STRs) were recovered and redeployed at all seven transects, each one composed by four depths (Fig. 1). In total, more than ### million temperature observations were collected from 26 instruments (Table 1)
   
 ```{r Temp observations}
 Cases_Loc_depth<-STR_all %>% count(Depth, Site,
@@ -239,21 +238,21 @@ light_count<-paste0("Light = ", nrow(light), " observatons")
 #light_count
 ```
 
-**NCRMP Climate fixed sentinel site monitoring:** At XX - 5m site, located in XX, short term instruments (XXh) were deployed to  monitor daily fluctuations in:
+**NCRMP Climate fixed sentinel site monitoring:** At Brewers Bay - 5m site, located in St. Thomas, short term instruments (72h) were deployed to  monitor daily fluctuations in:
 
   * **Current**: 303 observations
   * **pH**: 307 observations
   * **Light**: 301 observations
-  * **Carbonate Chemistry**: XX samples collected
+  * **Carbonate Chemistry**: 17 samples collected
 
 
 <br>
 
 **Habitat persistence:** Changes in bioerosion and accretion were monitored:
 
-  * **Carbonate budget surveys**: Benthic cover, sponge, urchin, and parrotfish surveys	completed at XX transects
-  * **Bioerosion**: XX Bioerosion Monitoring Units (BMUs) collected, XX redeployed 
-  * **Calcification**: XX Calcification Accretions Units (CAUs) collected, XX redeployed
+  * **Carbonate budget surveys**: Benthic cover, sponge, urchin, and parrotfish surveys	completed at six transects
+  * **Bioerosion**: 70 Bioerosion Monitoring Units (BMUs) collected, 70 redeployed 
+  * **Calcification**: 35 Calcification Accretions Units (CAUs) collected, 35 redeployed
 
 <br>
 
@@ -424,13 +423,13 @@ map
 
 ```
 
-<font size="2"> **Figure 1:** Study sites and depths in Puerto Rico. </font>
+<font size="2"> **Figure 1:** Study sites and depths in St. Thomas and St. John USVI. All Study areas have 4 depth points associated with them except for the north transect of St. John. </font>
 
 -----
 
 ### Subsurface temperature
 
-The temperatures that marine organisms experience are a function of local oceanographic conditions and vary with depth. To monitor subsurface temperature, six transects were established around the island. Each transect consists of STRs at four depths (1, 5, 15, 25m; Fig.2). Temperature was measured using SeaBird Electronics Subsurface Temperature Recorders (STR)s that collected data at 5-minute intervals. The instruments are usually swapped every 3 years for data collection but the COVID - 19 pandemic delayed field work in 2020. Local contractors were hired to swap the instruments as travel was not allowed and so gaps exist in the data as not all instruments survived the extended deployment time. The entire record from 2017 to 2023 is shown to aid with comparison. 
+The temperatures that marine organisms experience are a function of local oceanographic conditions and vary with depth. To monitor subsurface temperature, six transects were established around the island. Each transect consists of STRs at four depths (1, 5, 15, 25m; Fig.2). Temperature was measured using SeaBird Electronics Subsurface Temperature Recorders (STR)s that collected data at 5-minute intervals. The instruments are usually swapped every 3 years for data collection but the COVID - 19 pandemic delayed field work in 2020. Local contractors were hired to swap the instruments as travel was not allowed. Gaps exist in the data as not all instruments survived the extended deployment time. The full time series of data from 2017 - 2023 at all six locations and all four depths are provided to allow for temporal ans spatial comparison of subsurface temperature.
 
 ```{r filter Temp, include=FALSE}
 toDelete <- seq(1, nrow(STR_all), 2)
@@ -519,7 +518,7 @@ Figure2_1 <- ggarrange(plot1, box1, widths = c(8/10, 2/10))
 Figure2_1
 ```
 
-<font size="2"> **Figure 2:** Temperature conditions at seven transects representing a depth gradient (1m, 5m, 15m and 25m). Data were collected from August 2017 to March 2022. The COVID 19 pandemic caused a significant delay in collection of these instruments and some of them had stopped recording. Contractors were hired to complete the work in 2021 as travel was not allowed. Some instruments survived the entire deployment but others have not. </font>
+<font size="2"> **Figure 2:** Temperature conditions at seven locations in St. Thomas and St, John (Savana, Inner Brass, Brewers Bay and Southwaters, Stevens Cay, Johnson's Reef, Tektite) representing a depth gradient (1m, 5m, 15m and 25m). Data were collected from August 2017 to July 2023. </font>
  
 ```{r, echo = F, include=F}
 
