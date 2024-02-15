@@ -12,7 +12,7 @@ editor_options:
 
 <h1 style="color: darkblue;font size=24, align=center" > National Coral Reef Monitoring Program</h1> 
 
-<h2 style="color: darkblue;font size=12"> Climate Monitoring Brief: STT and STJ</h2>
+<h2 style="color: darkblue;font size=12"> Climate Monitoring Brief: St. Thomas and St. John USVI</h2>
 --------
 
 
@@ -71,7 +71,7 @@ University of Miami Cooperative Institute of Marine and Atmospheric Studies (CIM
 <br>
 
 <h5 style="font size=6">
-N. Besemer, A. Palacio, G. Kolodziej, T.Gill, K. Simmons I. Enochs - January February
+N. Besemer, A. Palacio, T.Gill, M. Studivan, K. Simmons, I. Enochs - March 2024
 </h5>
 
 ```{r logos, echo=FALSE, fig.align='left', out.width='20%'}
@@ -86,7 +86,7 @@ plot_grid(p1, p2)
 
 ### Mission
 
-The AOML Coral Program tracks the status and trends of coral reef ecosystems of the U.S. Atlantic and Caribbean as part of the National Coral Reef Monitoring Program (NCRMP). This summary brief provides an overview of the most recent climate monitoring efforts in Saint Thomas and Saint John (US Virgin Islands).
+The AOML Coral Program tracks the status and trends of coral reef ecosystems of the U.S. Atlantic and Caribbean as part of the National Coral Reef Monitoring Program (NCRMP). This summary brief provides an overview of the most recent climate monitoring efforts in St. Thomas and St. John (US Virgin Islands).
 
 
 ### Expedition summary
@@ -429,7 +429,7 @@ map
 
 ### Subsurface temperature
 
-The temperatures that marine organisms experience are a function of local oceanographic conditions and vary with depth. To monitor subsurface temperature, six transects were established around the island. Each transect consists of STRs at four depths (1, 5, 15, 25m; Fig.2). Temperature was measured using SeaBird Electronics Subsurface Temperature Recorders (STR)s that collected data at 5-minute intervals. The instruments are usually swapped every 3 years for data collection but the COVID - 19 pandemic delayed field work in 2020. Local contractors were hired to swap the instruments as travel was not allowed. Gaps exist in the data as not all instruments survived the extended deployment time. The full time series of data from 2017 - 2023 at all six locations and all four depths are provided to allow for temporal ans spatial comparison of subsurface temperature.
+The temperatures that marine organisms experience are a function of local oceanographic conditions and vary with depth. To monitor subsurface temperature, seven transects were established around the two islands. Each transect consists of STRs at four depths (1, 5, 15, 25m; Fig.2). Temperature was measured using SeaBird Electronics Subsurface Temperature Recorders (STR)s that collected data at 5-minute intervals. The instruments are usually swapped every 3 years for data collection but the COVID - 19 pandemic delayed field work in 2020. Local contractors were hired to swap the instruments as travel was not allowed. Gaps exist in the data as not all instruments survived the extended deployment time. The full time series of data from 2017 - 2023 at all six locations and all four depths are provided to allow for temporal and spatial comparison of subsurface temperature.
 
 ```{r filter Temp, include=FALSE}
 toDelete <- seq(1, nrow(STR_all), 2)
@@ -518,7 +518,7 @@ Figure2_1 <- ggarrange(plot1, box1, widths = c(8/10, 2/10))
 Figure2_1
 ```
 
-<font size="2"> **Figure 2:** Temperature conditions at seven locations in St. Thomas and St, John (Savana, Inner Brass, Brewers Bay and Southwaters, Stevens Cay, Johnson's Reef, Tektite) representing a depth gradient (1m, 5m, 15m and 25m). Data were collected from August 2017 to July 2023. </font>
+<font size="2"> **Figure 2:** Temperature conditions at seven locations in St. Thomas and St. John (Savana, Inner Brass, Brewers Bay and Southwaters, Stevens Cay, Johnson's Reef, Tektite) representing a depth gradient (1m, 5m, 15m and 25m). Data were collected from August 2017 to July 2023. </font>
  
 ```{r, echo = F, include=F}
 
@@ -556,7 +556,7 @@ STR_all_summary2
 
 ```
 
-Mean temperature values were similar among the locations and depths. The lowest temperatures generally occurred in February (mean: 26.5$^\circ$C, min: 24.7$^\circ$C, max: 28.5$^\circ$C) and the highest temperatures in September (mean: 29.4$^\circ$C, min: 25.4$^\circ$C, max: 32.2$^\circ$C).
+Mean temperature values were similar among the locations and depths. The lowest temperatures generally occurred in February (mean: 26.5$^\circ$C, min: 24.7$^\circ$C, max: 28.5$^\circ$C) and the highest temperatures in September (mean: 29.4$^\circ$C, min: 25.4$^\circ$C, max: 32.2$^\circ$C). ADDD SUMMARY STATS
 
 -----
 
@@ -564,7 +564,7 @@ Mean temperature values were similar among the locations and depths. The lowest 
 
 Seawater carbonate chemistry can fluctuate diurnally, due to biological forcing processes	such as	photosynthesis and respiration, as well as	calcification and dissolution. To characterize	this, discrete	water	samples (Fig. 3) were collected at three-hour intervals (n=15) using Subsurface Automatic Samplers (SAS, www.coral.noaa.gov/accrete/sas).
 
-These samples will be analyzed for Total Alkalinity (TA), Dissolved Inorganic Carbon (DIC), and SpectrophotometricpH (SpecpH), which	will be	used	to	calculate	pCO2	and	aragonite	saturation state	(ΩAragonite).	A	suite	of instrumentswas deployed for a 54-hour period	at the La Parguera 5m site. A SeaFET was used to log pH, an EcoPAR	measured Photosynthetically Active Radiation (PAR), and	a Lowell Tiltmeter measured	current speed	and	direction. Each	collected measurements at 15-minute intervals (Fig. 3).
+These samples will be analyzed for Total Alkalinity (TA), Dissolved Inorganic Carbon (DIC), and SpectrophotometricpH (SpecpH), which	will be	used	to	calculate	pCO2	and	aragonite	saturation state	(ΩAragonite).	A	suite	of instruments was deployed for a 72-hour period	at the Brewers Bay 5m site. A SeaFET was used to log pH, an EcoPAR	measured Photosynthetically Active Radiation (PAR), and	a Lowell Tiltmeter measured	current speed	and	direction. Each	collected measurements at 15-minute intervals (Fig. 3).
 
 ```{r ph and temp combined v3,echo=FALSE, warning=FALSE,fig.width = 9.5, fig.height = 3.5}
 
@@ -710,13 +710,13 @@ ggdraw(plot_grid(plot_grid(pH_Temp_Plot,
                  ncol = 1, rel_heights=c(1, 0.1)))
 ```
 
-<font size="2">**Figure 3:** Data	from XX diurnal suite monitoring from July 24th to July 27th. Top panel: pH and	temperature fromSeaFET. Bottom panel: Photosynthetically	Available	Radiation (PAR)	and current speed from EcoPAR and Tiltmeter. Shading denotes nighttime throughout	sequence of the plot. Instruments measured parameters every 15 minutes. </font>
+<font size="2">**Figure 3:** Data	from Brewers Bay diurnal suite monitoring from July 24th to July 27th. Top panel: pH and	temperature from SeaFET. Bottom panel: Photosynthetically	Available	Radiation (PAR)	and current speed from EcoPAR and Tiltmeter. Shading denotes nighttime throughout	sequence of the plot. Instruments measured parameters every 15 minutes. </font>
 
 -----
 
 ### Habitat persistance
 
-**Carbonate budget** assessments use transect-based surveys to quantify the abundance of carbonate producers (e.g., Corals and Crustose coralline algae), and carbonate bioeroders, (e.g., parrotfish and sea urchins). Abundances are multiplied by taxon-specific rates of carbonate alteration to determine if a reef is in a state of net accretion (habitat growth) or net loss (habitat loss; Fig. 4). At La Parguera, six transects were surveys in 2015, 2017 and 2023 to obtain carbonate budgets. These data show stable carbonate production over the monitoring timepoints. The transect results showed positive carbonate budgets in 2015, 2017 and 2023, which implies that this site supported reef accretion over the past eight years. ADD MORE HERE MAYBE CHAT DIP IN MACRO/MICRO BIOEROSION, INCREASE OF CCA, COOL OUTLIERS? 
+**Carbonate budget** assessments use transect-based surveys (Reef Budget) to quantify the abundance of carbonate producers (e.g., Corals and Crustose coralline algae), and carbonate bioeroders, (e.g., parrotfish and sea urchins). Abundances are multiplied by taxon-specific rates of carbonate alteration to determine if a reef is in a state of net accretion (habitat growth) or net loss (habitat loss; Fig. 4). At Brewers Bay, six transects were surveys in 2017 and 2023 to obtain carbonate budgets. These data show stable carbonate production over the monitoring timepoints. The transect results showed positive carbonate budgets in 2017 and 2023, which implies that this site supported reef accretion over the past eight years. ADD MORE HERE MAYBE CHAT DIP IN MACRO/MICRO BIOEROSION, INCREASE OF CCA, COOL OUTLIERS? 
 
 ```{r, Carbonate_B_plot, echo=FALSE, warning=FALSE, fig.width = 7.5, fig.height = 3.5}
 
@@ -769,11 +769,11 @@ ggarrange(CB_A_plot, CB_B_plot,
           ncol = 2, nrow = 1, widths = c(1, 2))
 ```
 
-<font size="2">**Figure 4:** Total changes in net carbonate production and separated by the	functional groups contributing to either calcification or bioerosion. PF represents parrotfish. </font>
+<font size="2">**Figure 4:** Net carbonate production and the magnitude of carbonate alteration by calcifying or bioeroding functional groups. PF represents parrotfish. The scale of the y-axis varies for each functional group </font>
 
 -----
 
-**Calcification Accretion Units (CAUs)** and **Bioerosion Monitoring Units (BMUs)** were used to investigate the balance between	calcification	and erosion. CAUs	and	BMUs were collected and redeployed for the next sampling cycle. CAUs are processed	by the NCRMP Pacific Climate group	and	the data will be available within a year. BMUs will be dried and cleaned using	a	hydrogen peroxide	solution. These	samples	will be	weighed and scanned using a CT scanner and then compared to their pre-scans	to quantify	bioerosion. Data will be available in a year. Please reference previous datasets for more information. 
+**Calcification Accretion Units (CAUs)** and **Bioerosion Monitoring Units (BMUs)** were used to investigate the balance between	calcification	and erosion. CAUs	and	BMUs were collected and redeployed for the next sampling cycle. CAUs are processed by the NCRMP Pacific Climate group	and	the data will be available within a year. BMUs will be dried and cleaned using a hydrogen peroxide solution. Samples	will be	weighed and scanned using a CT scanner and then compared to their pre-scans	to quantify	bioerosion.
 
 
 -----
@@ -781,7 +781,7 @@ ggarrange(CB_A_plot, CB_B_plot,
 ### About the monitoring program
 
 AOML's climate monitoring is a key part of the National Coral Reef Monitoring Program of NOAA's Coral Reef Conservation Program (CRCP), providing integrated, consistent, and comparable data across U.S. Managed coral reef ecosystems.
-CRCP monitoring efforts aim to:
+NCRMP monitoring efforts aim to:
 
 * Document the status of reef species of ecological and economic importance
 * Track and assess changes in reef communities in response to environmental stressors or human activities
@@ -806,14 +806,14 @@ NCRMP climate monitoring: https://www.coris.noaa.gov/monitoring/climate.html
 NOAA Atlantic Oceanographic and Meteorological Laboratory:
 http://www.aoml.noaa.gov/
 
-[Perto Rico Reef Status Report 2020](https://www.coris.noaa.gov/monitoring/status_report/docs/PR_508_compliant.pdf)
+[U.S. Virgin Islands Reef Status Report 2020](https://www.coris.noaa.gov/monitoring/status_report/docs/USVI_508_compliant.pdf)
 
 [National Coral Reef Status Report 2020](https://repository.library.noaa.gov/view/noaa/27295)
 
 ### Acknowledgements
 
 
-These efforts were jointly funded by NOAA's CRCP project #743 and OAP. We would like to sincerely thank the University of Puerto Rico Mayaguez campus particularly Milton Carlo for all of the mission support we received in La Parguera. We would also like to thank our other collaborators: Staff at Jobos Bay National Marine Estuary, PR Diving Services, Taino Divers and the University of the Virgin Islands for supporting our field efforts.
+These efforts were jointly funded by NOAA's CRCP project #743 and OAP. We would like to sincerely thank the University of the Virgin Islands particularly Dr. Tyler Smith and his team, Sarah Heidmann, Lindsay Dade, Nicole Krampitz, Adeline Shelby and Erin Hollander for all of the mission support we received for the trip. 
 
 ```{r fundingsources, include=FALSE, fig.width = 10, fig.height = 4, fig.align='center', out.width='100%'}
 
@@ -836,7 +836,7 @@ funding<-plot_grid(F1, F2, F3, F4,
 funding
 ```
 
-### Our Team
+
 
 **XXX Field Team**: XXX
 
