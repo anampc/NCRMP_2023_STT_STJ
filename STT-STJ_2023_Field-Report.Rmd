@@ -796,9 +796,9 @@ CBCoral.summary <- CB.data %>%
 **Landscape mosaics** are used to quantify the benthic community, and to monitor changes in coral cover over time. Thousands of underwater images are digitally stitched together to create a high-resolution archive of the reef at the time of collection.
 
 
-```{r front, echo=FALSE, out.width = '75%', fig.cap="Figure 5: Landscape Mosaic collected from transect XX", fig.align='center'}
+```{r, echo=FALSE, out.width = '75%', fig.cap="Figure 5: Landscape Mosaic collected from transect XX", fig.align='center'}
 
-knitr::include_graphics("Data/Pictures/stt_July23_T1_Mosaic.tiff")
+knitr::include_graphics("Data/Pictures/mosaic.png")
 
 ```
 
