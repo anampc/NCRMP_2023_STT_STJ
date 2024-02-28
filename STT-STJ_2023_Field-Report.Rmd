@@ -153,7 +153,7 @@ STR_all <-
   summary(STR_all$Site)
 ```
 
-**Subsurface temperature**: Subsurface temperature recorders (STRs) were recovered and redeployed at all seven transects, each one composed by four depths (Fig. 1). In total, more than ### million temperature observations were collected from 26 instruments (Table 1)
+**Subsurface temperature**: Subsurface temperature recorders (STRs) were recovered and redeployed at all seven transects, each one composed by four depths (Fig. 1). In total, more than 7.7 million temperature observations were collected from 26 instruments (Table 1)
   
 ```{r Temp observations}
 Cases_Loc_depth<-STR_all %>% count(Depth, Site,
@@ -226,15 +226,15 @@ current_file <-list.files(path="Data", pattern = "tiltmeter", full.names = T)
    filter(DateTime >= as.POSIXct('2023-07-24 09:15:00', tz='America/Puerto_Rico') &
           DateTime <= as.POSIXct('2023-07-27 12:45:00', tz='America/Puerto_Rico'))
 
-    summary(light$DateTime)
+  summary(light$DateTime)
 ```
 
 ```{r}
-pH_count<-paste0("pH = ", nrow(pH), " observatons")
+pH_count<-paste0("pH = ", nrow(pH), " observations")
 #pH_count
-current_count<-paste0("Current = ", nrow(current), " observatons")
+current_count<-paste0("Current = ", nrow(current), " observations")
 #current_count
-light_count<-paste0("Light = ", nrow(light), " observatons")
+light_count<-paste0("Light = ", nrow(light), " observations")
 #light_count
 ```
 
@@ -423,7 +423,7 @@ map
 
 ```
 
-<font size="2"> **Figure 1:** Study sites and depths in St. Thomas and St. John USVI. All Study areas have 4 depth points associated with them except for the north transect of St. John. </font>
+<font size="2"> **Figure 1:** Study sites and depths in St. Thomas and St. John USVI. All Study areas have 4 depth points associated with them except for the north transect of St. John XX THIS IS NOT TREU BASED ON THE PLOTTED DATA. </font>
 
 -----
 
@@ -462,9 +462,9 @@ STR_all<-STR_all[ toDelete ,]
 ```{r plot STRs, echo=FALSE, fig.width = 9.5, fig.height = 4}
 
 plot1<-ggplot(data = STR_all) +
-      geom_point(aes(x = ymd_hms(UTCDateTime), 
+      geom_line(aes(x = ymd_hms(UTCDateTime), 
                     y = Temperature, colour=Depth),
-                size=0.03) +
+                size=0.5) +
   
   theme_bw() +
   theme(#axis.title.x = element_blank(),
@@ -556,7 +556,7 @@ STR_all_summary2
 
 ```
 
-Mean temperature values were similar among the locations and depths. The lowest temperatures generally occurred in February (mean: 26.5$^\circ$C, min: 24.7$^\circ$C, max: 28.5$^\circ$C) and the highest temperatures in September (mean: 29.4$^\circ$C, min: 25.4$^\circ$C, max: 32.2$^\circ$C). ADDD SUMMARY STATS
+Mean temperature values were similar among the locations and depths. The lowest temperatures generally occurred in February (mean: 26.3$^\circ$C, min: 25.0$^\circ$C, max: 28.9$^\circ$C) and the highest temperatures in September (mean: 29.3$^\circ$C, min: 27.1$^\circ$C, max: 32.0$^\circ$C). Temperature in the shallower transects (1m at STT South and STJ South) was more variable compared to deeper transects (5, 15 and 25m; Fig. 2). 
 
 -----
 
@@ -594,7 +594,7 @@ pH_Temp_Plot<-ggplot(data = pH) +
   
    annotate("text",
           label = paste("July", 24:27),
-          x = seq.POSIXt(as.POSIXct('2023-07-24 11:00:00', tz='America/Puerto_Rico'),
+          x = seq.POSIXt(as.POSIXct('2023-07-24 11:30:00', tz='America/Puerto_Rico'),
                          by = "day", length.out = 4),
           y = pH_max + 0.03)+ 
   # Data
@@ -716,7 +716,7 @@ ggdraw(plot_grid(plot_grid(pH_Temp_Plot,
 
 ### Habitat persistance
 
-**Carbonate budget** assessments use transect-based surveys (Reef Budget) to quantify the abundance of carbonate producers (e.g., Corals and Crustose coralline algae), and carbonate bioeroders, (e.g., parrotfish and sea urchins). Abundances are multiplied by taxon-specific rates of carbonate alteration to determine if a reef is in a state of net accretion (habitat growth) or net loss (habitat loss; Fig. 4). At Brewers Bay, six transects were surveys in 2017 and 2023 to obtain carbonate budgets. These data show stable carbonate production over the monitoring timepoints. The transect results showed positive carbonate budgets in 2017 and 2023, which implies that this site supported reef accretion over the past eight years. ADD MORE HERE MAYBE CHAT DIP IN MACRO/MICRO BIOEROSION, INCREASE OF CCA, COOL OUTLIERS? 
+**Carbonate budget** assessments use transect-based surveys (Reef Budget) to quantify the abundance of carbonate producers (e.g., Corals and Crustose coralline algae), and carbonate bioeroders, (e.g., parrotfish and sea urchins). Abundances are multiplied by taxon-specific rates of carbonate alteration to determine if a reef is in a state of net accretion (habitat growth) or net loss (habitat loss; Fig. 4). At Brewers Bay, six transects were surveys in 2017 and 2023 to obtain carbonate budgets. These data show stable carbonate production over the monitoring time points. The transect results showed positive carbonate budgets in 2017 and 2023, which implies that this site supported reef accretion over the past eight years. However, carbonate production significantly declined from 5.08 +- 1.78 sd kg m-2 yr-1 in 2017 to 1.33 +- 1.78sd kg m-2 yr-1. This change was mainly driven by a reduction in coral production from 6.90 +- 2.13 in 2017 to 1.98 +- 0.326 in 2023.
 
 ```{r, Carbonate_B_plot, echo=FALSE, warning=FALSE, fig.width = 7.5, fig.height = 3.5}
 
@@ -767,6 +767,24 @@ CB_B_plot<-ggplot(mdata,aes(Year,value,fill=Year))+
 ggarrange(CB_A_plot, CB_B_plot, 
           #labels = c("A", "B", "C"),
           ncol = 2, nrow = 1, widths = c(1, 2))
+
+CB.summary <- CBA.data %>%
+  group_by(Year) %>%
+  summarise(
+    Mean = mean(value, na.rm = T),
+    sd = sd(value, na.rm = T)
+  ) %>%
+  arrange(Year)
+#CB.summary
+
+CBCoral.summary <- CB.data %>%
+  group_by(Year) %>%
+  summarise(
+    Mean = mean(Coral.production, na.rm = T),
+    sd = sd(Coral.production, na.rm = T)
+  ) %>%
+  arrange(Year)
+#CBCoral.summary
 ```
 
 <font size="2">**Figure 4:** Net carbonate production and the magnitude of carbonate alteration by calcifying or bioeroding functional groups. PF represents parrotfish. The scale of the y-axis varies for each functional group </font>
@@ -775,6 +793,14 @@ ggarrange(CB_A_plot, CB_B_plot,
 
 **Calcification Accretion Units (CAUs)** and **Bioerosion Monitoring Units (BMUs)** were used to investigate the balance between	calcification	and erosion. CAUs	and	BMUs were collected and redeployed for the next sampling cycle. CAUs are processed by the NCRMP Pacific Climate group	and	the data will be available within a year. BMUs will be dried and cleaned using a hydrogen peroxide solution. Samples	will be	weighed and scanned using a CT scanner and then compared to their pre-scans	to quantify	bioerosion.
 
+**Landscape mosaics** are used to quantify the benthic community, and to monitor changes in coral cover over time. Thousands of underwater images are digitally stitched together to create a high-resolution archive of the reef at the time of collection.
+
+
+```{r front, echo=FALSE, out.width = '75%', fig.cap="Figure 5: Landscape Mosaic collected from transect XX", fig.align='center'}
+
+knitr::include_graphics("Data/Pictures/stt_July23_T1_Mosaic.tiff")
+
+```
 
 -----
 
@@ -835,7 +861,6 @@ funding<-plot_grid(F1, F2, F3, F4,
 ```{r funding, echo=FALSE,fig.width = 10, fig.height = 3, fig.align='center', out.width='100%'}
 funding
 ```
-
 
 
 **XXX Field Team**: XXX
