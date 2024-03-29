@@ -1,11 +1,11 @@
 ---
 output:
+  word_document: default
+  always_allow_html: true
   html_document:
     fig_height: 5
     fig_width: 5
     fig_position: center
-  always_allow_html: true
-  word_document: default
 editor_options: 
   chunk_output_type: console
 ---
@@ -153,7 +153,7 @@ STR_all <-
   summary(STR_all$Site)
 ```
 
-**Subsurface temperature**: Subsurface temperature recorders (STRs) were recovered and redeployed at all seven transects, each one composed by four depths (Fig. 1). In total, more than 7.7 million temperature observations were collected from 26 instruments (Table 1)
+**Subsurface temperature**: Subsurface temperature recorders (STRs) were recovered and redeployed at all seven transects, each one composed by four depths (Fig. 1). In total, more than 10 million temperature observations were collected from 26 instruments (Table 1)
   
 ```{r Temp observations}
 Cases_Loc_depth<-STR_all %>% count(Depth, Site,
@@ -167,6 +167,42 @@ Cases_Loc_depth$Total<-rowSums(Cases_Loc_depth[, c(2:5)], na.rm=TRUE)
 kable(Cases_Loc_depth,
       format.args = list(big.mark = ","),
       caption = "Table 1: Number of temperature observations collected by transect and depth")
+```
+
+```{r, echo = F, include=F}
+
+STR_all$MonthYear<-format(STR_all$UTCDateTime, format="%Y-%m")
+STR_all$Month<-format(STR_all$UTCDateTime, format="%m")
+
+STR_all_summary1 <- STR_all %>%
+  group_by(Month) %>%
+  summarise(
+    MeanT = mean(Temperature, na.rm = T),
+    MinT = min(Temperature, na.rm = T),
+    MaxT = max(Temperature, na.rm = T)
+  ) %>%
+  arrange(Month)
+STR_all_summary1
+
+STR_all_summary <- STR_all %>%
+  group_by(Site, Depth) %>%
+  summarise(
+    MeanT = mean(Temperature, na.rm = T),
+    MinT = min(Temperature, na.rm = T),
+    MaxT = max(Temperature, na.rm = T)
+  ) %>%
+  arrange(Site)
+STR_all_summary
+
+STR_all_summary2 <- STR_all %>%
+  group_by(Site, Depth) %>%
+  summarise(
+    MinD = min(UTCDateTime, na.rm = T),
+    MaxD = max(UTCDateTime, na.rm = T)
+  ) %>%
+  arrange(Site)
+STR_all_summary2
+
 ```
 
 
@@ -422,7 +458,7 @@ map
 
 ```
 
-<font size="2"> **Figure 1:** Study sites and depths in St. Thomas and St. John USVI. All Study areas have 4 depth points associated with them except for the north transect of St. John XX THIS IS NOT TREU BASED ON THE PLOTTED DATA. </font>
+<font size="2"> **Figure 1:** Study sites and depths in St. Thomas and St. John USVI. All study areas have 4 depth points associated with them except for the north transect of St. John and the west transect in  St. Thomas. </font>
 
 -----
 
@@ -521,44 +557,8 @@ Figure2_1
 ```
 
 <font size="2"> **Figure 2:** Temperature conditions at seven locations in St. Thomas and St. John (Savana, Inner Brass, Brewers Bay and Southwaters, Stevens Cay, Johnson's Reef, Tektite) representing a depth gradient (1m, 5m, 15m and 25m). Data were collected from August 2017 to July 2023. </font>
- 
-```{r, echo = F, include=F}
 
-STR_all$MonthYear<-format(STR_all$UTCDateTime, format="%Y-%m")
-STR_all$Month<-format(STR_all$UTCDateTime, format="%m")
-
-STR_all_summary1 <- STR_all %>%
-  group_by(Month) %>%
-  summarise(
-    MeanT = mean(Temperature, na.rm = T),
-    MinT = min(Temperature, na.rm = T),
-    MaxT = max(Temperature, na.rm = T)
-  ) %>%
-  arrange(Month)
-STR_all_summary1
-
-STR_all_summary <- STR_all %>%
-  group_by(Site, Depth) %>%
-  summarise(
-    MeanT = mean(Temperature, na.rm = T),
-    MinT = min(Temperature, na.rm = T),
-    MaxT = max(Temperature, na.rm = T)
-  ) %>%
-  arrange(Site)
-STR_all_summary
-
-STR_all_summary2 <- STR_all %>%
-  group_by(Site, Depth) %>%
-  summarise(
-    MinD = min(UTCDateTime, na.rm = T),
-    MaxD = max(UTCDateTime, na.rm = T)
-  ) %>%
-  arrange(Site)
-STR_all_summary2
-
-```
-
-Mean temperature values were similar among the locations and depths. The lowest temperatures generally occurred in February (mean: 26.3$^\circ$C, min: 25.0$^\circ$C, max: 28.9$^\circ$C) and the highest temperatures in September (mean: 29.3$^\circ$C, min: 27.1$^\circ$C, max: 32.0$^\circ$C). Temperature in the shallower transects (1m at STT South and STJ South) was more variable compared to deeper transects (5, 15 and 25m; Fig. 2). 
+Mean temperature values were similar among the locations and depths. The lowest temperatures generally occurred in February (mean: 26.2$^\circ$C, min: 25.0$^\circ$C, max: 29.1$^\circ$C) and the highest temperatures in September (mean: 29.3$^\circ$C, min: 27.1$^\circ$C, max: 32.1$^\circ$C). Temperature values in the shallow (1m) South transects at STT and STJ were more variable compared to the rest of the stations (Fig. 2). 
 
 -----
 
@@ -571,14 +571,14 @@ These samples will be analyzed for Total Alkalinity (TA), Dissolved Inorganic Ca
 ```{r ph and temp combined v3,echo=FALSE, warning=FALSE,fig.width = 9.5, fig.height = 3.5}
 
 #pH and temp combined 
-summary(pH)
+#summary(pH)
 
 # Scale Temperature 
   #pH$Temp.adj <- (pH$Temperature * 0.3) -1.42
   
   scaleFactor_T <- max(pH$pH) / max(pH$Temperature)
   pH$Temp.adj<-(pH$Temperature * scaleFactor_T)-0.2
-  summary(pH)
+  #summary(pH)
 
   Temp.adj_max <- max(pH$Temp.adj)
   pH_max <- max(pH$pH)
@@ -639,8 +639,8 @@ pH_Temp_Plot<-ggplot(data = pH) +
 # Scale current
 scaleFactor <- max(light$PAR) / max(current$ws)
 current$ws.adj<-(current$ws * scaleFactor)
-summary(light)
-summary(current)
+#summary(light)
+#summary(current)
 
 # Plot
 Light_Current<-ggplot(data = light) +
@@ -851,7 +851,7 @@ F1 <- ggdraw() + draw_image("Logos/CRCP.jpeg", scale = 0.5)
 #    geom_text(aes(0,0,label='')) +
 #    xlab(NULL)
 F2 <- ggdraw() + draw_image("Logos/OAP.png", scale = 1.1)
-F3 <- ggdraw() + draw_image("Logos/UPRlogo.png", scale = 0.7)
+F3 <- ggdraw() + draw_image("Logos/NPS_logo.png", scale = 0.6)
 F4 <- ggdraw() + draw_image("Logos/UVI_logo_bw_300_3x.jpeg", scale = 0.5)
 
 funding<-plot_grid(F1, F2, F3, F4,
@@ -859,11 +859,9 @@ funding<-plot_grid(F1, F2, F3, F4,
 
 ```
 
-
 ```{r funding, echo=FALSE,fig.width = 10, fig.height = 3, fig.align='center', out.width='100%'}
 funding
 ```
-
 
 **Field Team**: Nicole Besemer, Taylor Gill, Ian Enochs, Michael Studivan, Sarah Heidmann, Erin Hollander, Nicole Krampitz, Lindsay Dade, Adeline Shelby
 
