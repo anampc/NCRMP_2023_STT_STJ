@@ -55,7 +55,7 @@ library(webshot)
 ```
 
 
-```{r front, echo=FALSE, out.width = '75%', fig.cap="Diver surveying XX reef", fig.align='center'}
+```{r front, echo=FALSE, out.width = '75%', fig.cap="Diver swaping out a temperature instrument at Newfound Reef", fig.align='center'}
 
 knitr::include_graphics("Data/Pictures/Nikki_STR_Swap.JPG")
 
@@ -798,7 +798,7 @@ CBCoral.summary <- CB.data %>%
 **Landscape mosaics** are used to quantify the benthic community, and to monitor changes in coral cover over time. Thousands of underwater images are digitally stitched together to create a high-resolution archive of the reef at the time of collection.
 
 
-```{r, echo=FALSE, out.width = '75%', fig.cap="Figure 5: Landscape Mosaic collected from transect XX", fig.align='center'}
+```{r, echo=FALSE, out.width = '75%', fig.cap="Figure 5: Landscape Mosaic collected from transect 1", fig.align='center'}
 
 knitr::include_graphics("Data/Pictures/mosaic.png")
 
@@ -865,6 +865,6 @@ funding
 ```
 
 
-**XXX Field Team**: XXX
+**Field Team**: Nicole Besemer, Taylor Gill, Ian Enochs, Michael Studivan, Sarah Heidmann, Erin Hollander, Nicole Krampitz, Lindsay Dade, Adeline Shelby
 
 **AOMLs NCRMP Atlantic and Caribbean Climate Team**: I. Enochs, N. Besemer, A. Palacio-Castro, G. Kolodziej, T. Gill, A.Boyd, M. Jankulak, K. Simmons, A. Webb, B. Chomitz
