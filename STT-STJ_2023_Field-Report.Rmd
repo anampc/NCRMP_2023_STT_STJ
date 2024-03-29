@@ -1,11 +1,11 @@
 ---
 output:
-  word_document: default
-  always_allow_html: true
   html_document:
     fig_height: 5
     fig_width: 5
     fig_position: center
+  always_allow_html: true
+  word_document: default
 editor_options: 
   chunk_output_type: console
 ---
@@ -245,7 +245,6 @@ light_count<-paste0("Light = ", nrow(light), " observations")
   * **Light**: 301 observations
   * **Carbonate Chemistry**: 17 samples collected
 
-
 <br>
 
 **Habitat persistence:** Changes in bioerosion and accretion were monitored:
@@ -462,9 +461,12 @@ STR_all<-STR_all[ toDelete ,]
 ```{r plot STRs, echo=FALSE, fig.width = 9.5, fig.height = 4}
 
 plot1<-ggplot(data = STR_all) +
-      geom_line(aes(x = ymd_hms(UTCDateTime), 
-                    y = Temperature, colour=Depth),
-                size=0.5) +
+      # geom_line(aes(x = ymd_hms(UTCDateTime), 
+      #               y = Temperature, colour=Depth),
+      #           size=0.5) +
+  geom_point(aes(x = ymd_hms(UTCDateTime), 
+                y = Temperature, colour=Depth),
+                size=0.05) +
   
   theme_bw() +
   theme(#axis.title.x = element_blank(),
